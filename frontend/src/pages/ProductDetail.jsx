@@ -1,8 +1,8 @@
 import React from 'react';
-import Header from './components/Header';
-import ProductImageGallery from './components/ProductImageGallery';
-import ProductInfo from './components/ProductInfo';
-import { mockProduct, mockImages } from './data/mockData';
+import Header from '../components/Header';
+import ProductImageGallery from '../components/ProductImageGallery';
+import ProductInfo from '../components/ProductInfo';
+import { mockProduct, mockImages } from '../data/mockProduct';
 
 function ProductDetail() {
   const handleBack = () => {
