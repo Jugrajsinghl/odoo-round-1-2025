@@ -69,6 +69,44 @@ export function LandingPage() {
         </div>
       </section>
 
+
+
+      
+      <section className="bg-white py-10 overflow-hidden">
+  <div className="relative w-full">
+    <div className="flex w-max gap-4 animate-scroll-x">
+      {[
+        'https://images.pexels.com/photos/1002693/pexels-photo-1002693.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800',
+        'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=800',
+      ]
+        .concat([
+          'https://images.pexels.com/photos/1002693/pexels-photo-1002693.jpeg?auto=compress&cs=tinysrgb&w=800',
+          'https://images.pexels.com/photos/985635/pexels-photo-985635.jpeg?auto=compress&cs=tinysrgb&w=800',
+          'https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=800',
+          'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800',
+          'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800',
+          'https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=800',
+        ])
+        .map((src, index) => (
+          <img
+            key={index}
+            src={src}
+            alt={`Slide ${index + 1}`}
+            className="h-48 w-72 object-cover rounded-lg shadow-md flex-shrink-0"
+          />
+        ))}
+    </div>
+  </div>
+</section>
+
+
+
+
+
       {/* Stats Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,6 +123,30 @@ export function LandingPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      
+
+      {/* Featured Items */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900">Featured Items</h2>
+            <Link
+              to="/browse"
+              className="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center"
+            >
+              View All
+              <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredItems.map(item => (
+              <ItemCard key={item.id} item={item} />
+            ))}
           </div>
         </div>
       </section>
@@ -121,27 +183,6 @@ export function LandingPage() {
         </div>
       </section>
 
-      {/* Featured Items */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900">Featured Items</h2>
-            <Link
-              to="/browse"
-              className="text-emerald-600 hover:text-emerald-700 font-medium inline-flex items-center"
-            >
-              View All
-              <ArrowRight className="ml-1 h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredItems.map(item => (
-              <ItemCard key={item.id} item={item} />
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-16 bg-emerald-600">
