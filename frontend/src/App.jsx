@@ -9,6 +9,7 @@ import { BrowseItems } from './pages/BrowseItems';
 import { ItemDetail } from './pages/ItemDetails';
 import { AddItem } from './pages/AddItem';
 import { AdminPanel } from './pages/AdminPanel';
+import ProductDetail from './pages/ProductDetail';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/item/:id" element={<ItemDetail />} />
             <Route path="/add-item" element={<AddItem />} />
             <Route path="/admin" element={<AdminPanel />} />
+            <Route path="/admin" element={<ProductDetail />} />
           </Routes>
         </div>
       </Router>
