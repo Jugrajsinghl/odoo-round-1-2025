@@ -11,7 +11,8 @@ Email - davidmalviya2004@gmail.com
 
 # ReWear - Community Clothing Exchange Platform
 
-![ReWear Logo]<img width="500" height="500" alt="Clothing_Store-removebg-preview" src="https://github.com/user-attachments/assets/1e8c6808-d24e-4374-ae41-01f4adcb9a00" />
+![ReWear Logo]<img width="500" height="500" alt="Clothing Store" src="https://github.com/user-attachments/assets/452ba6dd-6368-442b-ba7e-5f521cec832b" />
+
 
 
 ## 🌱 Overview
