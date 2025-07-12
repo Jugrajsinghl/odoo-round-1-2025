@@ -1,1 +1,32 @@
 @import "tailwindcss";
+
+.input {
+  @apply border rounded px-4 py-2 w-full;
+}
+
+.btn-primary {
+  @apply bg-emerald-600 text-white py-2 rounded hover:bg-emerald-700 transition;
+}
+
+/* Custom class to hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 40s linear infinite;
+}
+

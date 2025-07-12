@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
+// Create context without TypeScript types
 const AuthContext = createContext(undefined);
 
 // Mock users for demonstration
@@ -51,9 +52,9 @@ export function AuthProvider({ children }) {
       isAdmin: false,
       joinedAt: new Date().toISOString().split('T')[0],
     };
+    mockUsers.push(newUser);
     setUser(newUser);
     localStorage.setItem('rewear_user', JSON.stringify(newUser));
-    mockUsers.push(newUser); // Just for mock demonstration
   };
 
   const logout = () => {
@@ -64,13 +65,14 @@ export function AuthProvider({ children }) {
   const value = {
     user,
     login,
-    logout,
     signup,
+    logout,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 
+// Custom hook to access AuthContext
 export function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {

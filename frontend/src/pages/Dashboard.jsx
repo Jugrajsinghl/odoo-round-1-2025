@@ -2,11 +2,11 @@ import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { mockItems } from '../data/mockItems';
 import { ItemCard } from '../components/ItemCard';
-import { User, Package, ArrowRightLeft, Star, Plus, TrendingUp } from 'lucide-react';
+import { User, Package, ArrowRightLeft, Star, Plus, TrendingUp, Mail, Phone, MapPin } from 'lucide-react';
 
 export function Dashboard() {
   const { user } = useAuth();
-
+  
   if (!user) return null;
 
   const userItems = mockItems.filter(item => item.uploaderId === user.id);
@@ -25,35 +25,59 @@ export function Dashboard() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
-          <div className="flex items-center space-x-4">
-            <div className="bg-emerald-100 p-4 rounded-full">
-              <User className="h-8 w-8 text-emerald-600" />
+          <div className="flex items-start space-x-6">
+            <div className="flex-shrink-0">
+              {user.profilePhoto ? (
+                <img 
+                  src={user.profilePhoto} 
+                  alt={user.firstName}
+                  className="w-20 h-20 rounded-full object-cover border-4 border-emerald-100"
+                />
+              ) : (
+                <div className="bg-emerald-100 p-6 rounded-full">
+                  <User className="h-8 w-8 text-emerald-600" />
+                </div>
+              )}
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900">Welcome back, {user.name}!</h1>
-              <p className="text-gray-600">Manage your items and track your swaps</p>
+            <div className="flex-1">
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">
+                Welcome back, {user.firstName} {user.lastName}!
+              </h1>
+              <p className="text-gray-600 mb-4">@{user.username}</p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" />
+                  <span>{user.email}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4" />
+                  <span>{user.mobileNumber}</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>{user.district}, {user.state}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          {stats.map((stat, index) => {
-            const Icon = stat.icon;
-            return (
-              <div key={index} className="bg-white rounded-lg shadow-sm p-6">
-                <div className="flex items-center">
-                  <div className="p-2 rounded-lg bg-gray-100">
-                    <Icon className={`h-6 w-6 ${stat.color}`} />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm font-medium text-gray-500">{stat.label}</p>
-                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                  </div>
+          {stats.map((stat, index) => (
+            <div key={index} className="bg-white rounded-lg shadow-sm p-6">
+              <div className="flex items-center">
+                <div className={`p-2 rounded-lg bg-gray-100`}>
+                  <stat.icon className={`h-6 w-6 ${stat.color}`} />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm font-medium text-gray-500">{stat.label}</p>
+                  <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
                 </div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
 
         {/* Quick Actions */}

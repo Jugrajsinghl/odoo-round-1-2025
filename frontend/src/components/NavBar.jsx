@@ -45,8 +45,16 @@ export function Navbar() {
                 </div>
                 <div className="relative group">
                   <button className="flex items-center space-x-2 text-gray-700 hover:text-emerald-600 transition-colors">
-                    <User className="h-5 w-5" />
-                    <span className="hidden md:block">{user.name}</span>
+                    {user.profilePhoto ? (
+                      <img 
+                        src={user.profilePhoto} 
+                        alt={user.firstName}
+                        className="h-8 w-8 rounded-full object-cover border-2 border-gray-200"
+                      />
+                    ) : (
+                      <User className="h-5 w-5" />
+                    )}
+                    <span className="hidden md:block">{user.firstName} {user.lastName}</span>
                   </button>
                   <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                     <Link to="/dashboard" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
