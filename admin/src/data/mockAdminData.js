@@ -1,3 +1,8 @@
+import img1 from '../assets/image1.jpg'
+import img2 from '../assets/image2.jpg'
+import img3 from '../assets/image3.jpg'
+import img4 from '../assets/image4.jpg'
+
 export const mockAdminUsers = [
   {
     id: 'user-1',
@@ -61,8 +66,9 @@ export const mockAdminOrders = [
     requesterAvatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
     ownerName: 'Sarah Johnson',
     ownerAvatar: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400',
-    itemName: 'Vintage Denim Jacket',
-    itemImage: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=400',
+    itemName: 'Vintage Shirt',
+    // itemImage: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=400',
+    itemImage: img1,
     status: 'pending',
     requestDate: '2024-02-15',
     points: 150
@@ -74,12 +80,27 @@ export const mockAdminOrders = [
     requesterAvatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
     ownerName: 'David Rodriguez',
     ownerAvatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400',
-    itemName: 'Designer Handbag',
-    itemImage: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400',
+    itemName: 'Black Cotton Shirt',
+    // itemImage: 'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400',
+    itemImage: img4,
     status: 'approved',
     requestDate: '2024-02-12',
     points: 200
   },
+  // {
+  //   id: 'order-3',
+  //   swapId: 'swap-003',
+  //   requesterName: 'Sarah Johnson',
+  //   requesterAvatar: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400',
+  //   ownerName: 'Mike Chen',
+  //   ownerAvatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
+  //   itemName: 'Short One Piece A-Line Midi Dress',
+  //   // itemImage: 'https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400',
+  //   itemImage: img3,
+  //   status: 'completed',
+  //   requestDate: '2024-02-08',
+  //   points: 180
+  // },
   {
     id: 'order-3',
     swapId: 'swap-003',
@@ -87,12 +108,13 @@ export const mockAdminOrders = [
     requesterAvatar: 'https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=400',
     ownerName: 'Mike Chen',
     ownerAvatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-    itemName: 'Winter Coat',
-    itemImage: 'https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400',
-    status: 'completed',
-    requestDate: '2024-02-08',
-    points: 180
-  }
+    itemName: 'Vintage Shirt',
+    // itemImage: 'https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg?auto=compress&cs=tinysrgb&w=400',
+    itemImage: img1,
+    status: 'pending',
+    requestDate: '2024-02-15',
+    points: 150
+  },
 ];
 
 export const mockAdminListings = [

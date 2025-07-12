@@ -1,10 +1,12 @@
 // File: mockItems.js
+import img1 from '../assets/image1.jpg'
+import img2 from '../assets/image2.jpg'
 
 export const mockItems = [
   {
     id: '1',
     title: 'Vintage jeans Shoe ',
-    description: 'Beautiful vintage denim jacket in excellent condition. Perfect for layering and has that authentic worn-in look.',
+    description: 'The muted olive green tone adds a fresh yet earthy touch to your outfit, making it a standout choice for both casual and semi-casual looks. The denim material not only offers a soft, breathable feel but also adds a distinctive texture that sets these shoes apart from the ordinary.',
     category: 'outerwear',
     type: 'jacket',
     size: 'M',
@@ -63,15 +65,13 @@ export const mockItems = [
   {
     id: '4',
     title: 'Leather Crossbody Bag',
-    description: 'Genuine leather crossbody bag in tan. Perfect size for daily use with multiple compartments.',
+    description: 'Step into effortless style with this blue textured shirt featuring subtle fluid wave patterns that add a touch of elegance and movement. The rich blue base is complemented by gently flowing wave textures, creating a modern, eye-catching look. Made from high-quality fabric, it offers comfort, breathability, and a perfect fit—ideal for both casual and semi-formal occasions.',
     category: 'accessories',
     type: 'bag',
     size: 'Other',
     condition: 'like-new',
     tags: ['leather', 'tan', 'crossbody', 'bag'],
-    images: [
-      'https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=800'
-    ],
+    images:[img1],
     uploaderId: '1',
     uploaderName: 'Sarah Johnson',
     pointValue: 80,
@@ -80,28 +80,47 @@ export const mockItems = [
     createdAt: '2024-01-15'
   },
   {
-    id: '5',
-    title: 'High-waisted Jeans',
-    description: 'Trendy high-waisted jeans with a flattering fit. Worn a few times but still in excellent condition.',
-    category: 'bottoms',
-    type: 'jeans',
-    size: 'M',
-    condition: 'like-new',
-    tags: ['high-waisted', 'jeans', 'denim', 'trendy'],
+    id: '2',
+    title: 'Floral Summer Dress',
+    description: 'Light and breezy floral dress perfect for summer. Never worn, still has tags.',
+    category: 'dresses',
+    type: 'midi dress',
+    size: 'S',
+    condition: 'new',
+    tags: ['floral', 'summer', 'midi', 'feminine'],
     images: [
-      'https://images.pexels.com/photos/1598505/pexels-photo-1598505.jpeg?auto=compress&cs=tinysrgb&w=800'
+      img2
     ],
     uploaderId: '1',
     uploaderName: 'Sarah Johnson',
-    pointValue: 55,
+    pointValue: 60,
     isAvailable: true,
-    isApproved: false,
-    createdAt: '2024-01-22'
+    isApproved: true,
+    createdAt: '2024-01-18'
   },
+  // {
+    //   id: '5',
+  //   title: 'High-waisted Jeans',
+  //   description: 'Trendy high-waisted jeans with a flattering fit. Worn a few times but still in excellent condition.',
+  //   category: 'bottoms',
+  //   type: 'jeans',
+  //   size: 'M',
+  //   condition: 'like-new',
+  //   tags: ['high-waisted', 'jeans', 'denim', 'trendy'],
+  //   images: [
+  //     img2
+  //   ],
+  //   uploaderId: '1',
+  //   uploaderName: 'Sarah Johnson',
+  //   pointValue: 55,
+  //   isAvailable: true,
+  //   isApproved: false,
+  //   createdAt: '2024-01-22'
+  // },
   {
     id: '6',
     title: 'Silk Blouse',
-    description: 'Elegant silk blouse in dusty pink. Perfect for office or formal occasions.',
+    description: 'Elevate your style with this exquisite one-piece yellow silk fabric, radiating warmth and elegance. Crafted from premium-quality silk, this fabric boasts a smooth, lustrous texture and a graceful drape, perfect for creating sarees, lehengas, kurtis, or designer outfits. The rich yellow hue adds a vibrant yet classy touch, ideal for festive occasions, weddings, or ethnic wear.',
     category: 'tops',
     type: 'blouse',
     size: 'S',
