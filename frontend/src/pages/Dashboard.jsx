@@ -2,11 +2,21 @@ import React from 'react';
 import { useAuth } from '../context/AuthContext';
 import { mockItems } from '../data/mockItems';
 import { ItemCard } from '../components/ItemCard';
-import { User, Package, ArrowRightLeft, Star, Plus, TrendingUp, Mail, Phone, MapPin } from 'lucide-react';
+import {
+  User,
+  Package,
+  ArrowRightLeft,
+  Star,
+  Plus,
+  TrendingUp,
+  Mail,
+  Phone,
+  MapPin,
+} from 'lucide-react';
 
 export function Dashboard() {
   const { user } = useAuth();
-  
+
   if (!user) return null;
 
   const userItems = mockItems.filter(item => item.uploaderId === user.id);
@@ -17,9 +27,15 @@ export function Dashboard() {
     { label: 'Total Points', value: user.points, icon: Star, color: 'text-yellow-600' },
     { label: 'Items Listed', value: userItems.length, icon: Package, color: 'text-blue-600' },
     { label: 'Swaps Completed', value: 3, icon: ArrowRightLeft, color: 'text-green-600' },
-    { label: 'Member Since', value: user.joinedAt, icon: TrendingUp, color: 'text-purple-600' },
+    {
+      label: 'Member Since',
+      value: new Date(user.joinedAt).toLocaleDateString(),
+      icon: TrendingUp,
+      color: 'text-purple-600',
+    },
   ];
-
+  
+  console.log(user);
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,8 +44,8 @@ export function Dashboard() {
           <div className="flex items-start space-x-6">
             <div className="flex-shrink-0">
               {user.profilePhoto ? (
-                <img 
-                  src={user.profilePhoto} 
+                <img
+                  src={user.profilePhoto}
                   alt={user.firstName}
                   className="w-20 h-20 rounded-full object-cover border-4 border-emerald-100"
                 />
@@ -44,11 +60,11 @@ export function Dashboard() {
                 Welcome back, {user.firstName} {user.lastName}!
               </h1>
               <p className="text-gray-600 mb-4">@{user.username}</p>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
                   <Mail className="h-4 w-4" />
-                  <span>{user.email}</span>
+                  {/* <span>{user.email}</span> */}
                 </div>
                 <div className="flex items-center space-x-2">
                   <Phone className="h-4 w-4" />
@@ -56,7 +72,9 @@ export function Dashboard() {
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="h-4 w-4" />
-                  <span>{user.district}, {user.state}</span>
+                  <span>
+                    {user.district}, {user.state}
+                  </span>
                 </div>
               </div>
             </div>
@@ -104,7 +122,7 @@ export function Dashboard() {
           <div className="mb-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Pending Approval</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {pendingItems.map((item) => (
+              {pendingItems.map(item => (
                 <div key={item.id} className="relative">
                   <ItemCard item={item} showActions={false} />
                   <div className="absolute top-2 left-2 bg-yellow-100 text-yellow-800 px-2 py-1 text-xs font-medium rounded-full">
@@ -121,7 +139,7 @@ export function Dashboard() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Your Listed Items</h2>
           {approvedItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {approvedItems.map((item) => (
+              {approvedItems.map(item => (
                 <ItemCard key={item.id} item={item} />
               ))}
             </div>
@@ -147,7 +165,9 @@ export function Dashboard() {
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-900">Swap completed</p>
-                <p className="text-sm text-gray-600">Your "Vintage Denim Jacket" was swapped for "Silk Scarf"</p>
+                <p className="text-sm text-gray-600">
+                  Your "Vintage Denim Jacket" was swapped for "Silk Scarf"
+                </p>
               </div>
               <span className="text-xs text-gray-500 ml-auto">2 days ago</span>
             </div>

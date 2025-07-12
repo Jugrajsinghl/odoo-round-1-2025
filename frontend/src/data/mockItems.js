@@ -3,7 +3,7 @@
 export const mockItems = [
   {
     id: '1',
-    title: 'Vintage Denim Jacket',
+    title: 'Vintage jeans Shoe ',
     description: 'Beautiful vintage denim jacket in excellent condition. Perfect for layering and has that authentic worn-in look.',
     category: 'outerwear',
     type: 'jacket',
@@ -11,7 +11,7 @@ export const mockItems = [
     condition: 'good',
     tags: ['vintage', 'denim', 'casual', 'blue'],
     images: [
-      'https://images.pexels.com/photos/1002693/pexels-photo-1002693.jpeg?auto=compress&cs=tinysrgb&w=800',
+      // 'https://images.pexels.com/photos/1002693/pexels-photo-1002693.jpeg?auto=compress&cs=tinysrgb&w=800',
       'https://images.pexels.com/photos/934069/pexels-photo-934069.jpeg?auto=compress&cs=tinysrgb&w=800'
     ],
     uploaderId: '1',

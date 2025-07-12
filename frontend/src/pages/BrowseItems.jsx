@@ -49,7 +49,7 @@ export function BrowseItems() {
         <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
             {/* Search */}
-            <div className="md:col-span-4">
+            <div className="md:col-span-6">
               <div className="relative">
                 <Search className="h-5 w-5 text-gray-400 absolute left-3 top-3" />
                 <input
@@ -63,7 +63,7 @@ export function BrowseItems() {
             </div>
 
             {/* Category Filter */}
-            <div className="md:col-span-2">
+            {/* <div className="md:col-span-2">
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -76,7 +76,7 @@ export function BrowseItems() {
                   </option>
                 ))}
               </select>
-            </div>
+            </div> */}
 
             {/* Condition Filter */}
             <div className="md:col-span-2">
@@ -123,8 +123,83 @@ export function BrowseItems() {
                 Clear
               </button>
             </div>
+
+
           </div>
         </div>
+
+
+
+            {/* ------------------------------------------------- */}
+            {/* Category Filter Buttons */}
+{/* Category Filter Cards with Pexels URLs */}
+<div className="mb-6">
+  <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+    {[
+      {
+        key: '',
+        label: 'All Categories',
+        image: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'tops',
+        label: 'Tops',
+        image: 'https://images.pexels.com/photos/6311587/pexels-photo-6311587.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'bottoms',
+        label: 'Bottoms',
+        image: 'https://images.pexels.com/photos/9779653/pexels-photo-9779653.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'dresses',
+        label: 'Dresses',
+        image: 'https://images.pexels.com/photos/2748535/pexels-photo-2748535.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'outerwear',
+        label: 'Outerwear',
+        image: 'https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'shoes',
+        label: 'Shoes',
+        image: 'https://images.pexels.com/photos/292999/pexels-photo-292999.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'accessories',
+        label: 'Accessories',
+        image: 'https://images.pexels.com/photos/989855/pexels-photo-989855.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+      {
+        key: 'others',
+        label: 'Others',
+        image: 'https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&w=600',
+      },
+    ].map(({ key, label, image }) => (
+      <div
+        key={key || 'all'}
+        onClick={() => setSelectedCategory(key)}
+        className={`relative h-24 rounded-lg cursor-pointer overflow-hidden group border-2 transition-all ${
+          selectedCategory === key ? 'border-emerald-600' : 'border-transparent'
+        }`}
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-opacity" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-white text-lg font-semibold drop-shadow">{label}</span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
 
         {/* Results Count */}
         <div className="mb-6">
