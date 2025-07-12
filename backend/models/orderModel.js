@@ -19,5 +19,5 @@ productId:{
 }
 })
 
-const orderModel = mongoose.models.order || mongoose.model("user", orderSchema);
+const orderModel = mongoose.models.order || mongoose.model("order", orderSchema);
 export default orderModel;

@@ -1,6 +1,4 @@
-// import React from 'react';
-// import Header from './components/Header';
-// import { Header } from '../components/Header';
+import React from 'react';
 import Header from '../components/Header';
 import ProductImageGallery from '../components/ProductImageGallery';
 import ProductInfo from '../components/ProductInfo';

@@ -9,6 +9,10 @@ import { BrowseItems } from './pages/BrowseItems';
 import { ItemDetail } from './pages/ItemDetails';
 import { AddItem } from './pages/AddItem';
 import { AdminPanel } from './pages/AdminPanel';
+// <<<<<<< HEAD
+import Register from './pages/Register';
+import Login from './pages/Login';
+// =======
 import ProductDetail from './pages/ProductDetail';
 import AddProduct from './pages/AddProduct';
 // import { AddItem } from './pages/AddItem';
@@ -21,7 +25,9 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Auth mode="login" />} />
+            {/* <Route path="/login" element={<Auth mode="login" />} /> */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Register />} />
             <Route path="/signup" element={<Auth mode="signup" />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/browse" element={<BrowseItems />} />

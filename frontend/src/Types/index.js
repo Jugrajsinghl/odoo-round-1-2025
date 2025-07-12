@@ -1,52 +1,84 @@
-// This file provides shape references for developers. These are not enforced by JavaScript.
+// Example user structure
+const exampleUser = {
+  id: "",
+  username: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  age: 0,
+  gender: "",
+  mobileNumber: "",
+  address: "",
+  pincode: "",
+  state: "",
+  district: "",
+  profilePhoto: "",
+  points: 0,
+  isAdmin: false,
+  joinedAt: "",
+};
 
-// Example User object
-// {
-//   id: "user123",
-//   email: "user@example.com",
-//   name: "John Doe",
-//   points: 100,
-//   isAdmin: false,
-//   joinedAt: "2024-01-01",
-//   avatar: "https://..."
-// }
+// Example item structure
+const exampleItem = {
+  id: "",
+  title: "",
+  description: "",
+  category: "",
+  type: "",
+  size: "",
+  condition: "",
+  tags: [],
+  images: [],
+  uploaderId: "",
+  uploaderName: "",
+  pointValue: 0,
+  isAvailable: true,
+  isApproved: true,
+  createdAt: "",
+  location: "",
+};
 
-// Example Item object
-// {
-//   id: "item123",
-//   title: "Blue T-shirt",
-//   description: "...",
-//   category: "tops",
-//   type: "t-shirt",
-//   size: "M",
-//   condition: "good",
-//   tags: ["summer", "cotton"],
-//   images: ["image1.jpg", "image2.jpg"],
-//   uploaderId: "user123",
-//   uploaderName: "John Doe",
-//   pointValue: 30,
-//   isAvailable: true,
-//   isApproved: true,
-//   createdAt: "2024-01-01",
-//   location: "Delhi"
-// }
+// Example swap request structure
+const exampleSwapRequest = {
+  id: "",
+  requesterId: "",
+  requesterName: "",
+  itemId: "",
+  itemTitle: "",
+  offeredItemId: "",
+  offeredItemTitle: "",
+  type: "swap", // or 'points'
+  status: "pending", // or 'accepted' | 'rejected' | 'completed'
+  createdAt: "",
+  message: "",
+};
 
-// Example SwapRequest object
-// {
-//   id: "swap456",
-//   requesterId: "user789",
-//   requesterName: "Jane Smith",
-//   itemId: "item123",
-//   itemTitle: "Blue T-shirt",
-//   offeredItemId: "item999",
-//   offeredItemTitle: "Green Hoodie",
-//   type: "swap", // or "points"
-//   status: "pending", // or "accepted", "rejected", "completed"
-//   createdAt: "2024-03-01",
-//   message: "Would you like to swap with my hoodie?"
-// }
+// Auth context mock structure
+const authContext = {
+  user: null,
+  login: async (email, password) => {},
+  signup: async (userData) => {},
+  logout: () => {},
+};
 
-// Item constants (used for dropdowns or validation)
-export const ItemCategories = ['tops', 'bottoms', 'dresses', 'outerwear', 'shoes', 'accessories'];
-export const ItemConditions = ['new', 'like-new', 'good', 'fair'];
-export const ItemSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'Other'];
+// SignupData example
+const exampleSignupData = {
+  username: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  age: 0,
+  gender: "",
+  mobileNumber: "",
+  address: "",
+  pincode: "",
+  state: "",
+  district: "",
+  profilePhoto: "",
+};
+
+// Valid enums as arrays (if needed for dropdowns or validation)
+const ItemCategories = ['tops', 'bottoms', 'dresses', 'outerwear', 'shoes', 'accessories'];
+const ItemConditions = ['new', 'like-new', 'good', 'fair'];
+const ItemSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'Other'];

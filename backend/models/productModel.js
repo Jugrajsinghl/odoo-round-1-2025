@@ -23,8 +23,12 @@ const ProductSchema = new mongoose.Schema({
     price:{
         type:Number,
         required:true
+    },
+    soldOut:{
+        type:Boolean,
+        default:false
     }
 })
 
-const ProductModel = mongoose.models.product || mongoose.model("user", ProductSchema);
+const ProductModel = mongoose.models.product || mongoose.model("product", ProductSchema);
 export default ProductModel;
