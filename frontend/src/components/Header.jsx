@@ -1,8 +1,8 @@
-import React from 'react';
+
 import { Search, User, ArrowLeft } from 'lucide-react';
 
 
-export function Header({ onBack }) {
+export default function Header({ onBack }) {
   return (
     <header className="bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto">

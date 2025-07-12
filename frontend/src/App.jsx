@@ -10,6 +10,8 @@ import { ItemDetail } from './pages/ItemDetails';
 import { AddItem } from './pages/AddItem';
 import { AdminPanel } from './pages/AdminPanel';
 import ProductDetail from './pages/ProductDetail';
+import AddProduct from './pages/AddProduct';
+// import { AddItem } from './pages/AddItem';
 
 function App() {
   return (
@@ -26,7 +28,8 @@ function App() {
             <Route path="/item/:id" element={<ItemDetail />} />
             <Route path="/add-item" element={<AddItem />} />
             <Route path="/admin" element={<AdminPanel />} />
-            <Route path="/admin" element={<ProductDetail />} />
+            <Route path="/product-details" element={<ProductDetail />} />
+            <Route path="/list-items" element={<AddProduct />} />
           </Routes>
         </div>
       </Router>
