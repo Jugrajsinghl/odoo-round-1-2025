@@ -5,6 +5,7 @@ import { Recycle, User, LogOut, Plus, Heart, Settings } from 'lucide-react';
 
 export function Navbar() {
   const { user, logout } = useAuth();
+  // console.log(users);
   const navigate = useNavigate();
 
   const handleLogout = () => {

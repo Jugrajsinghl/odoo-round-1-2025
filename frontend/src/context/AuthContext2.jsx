@@ -17,16 +17,8 @@ const mockUsers = [
     id: '2',
     email: 'admin@rewear.com',
     name: 'Admin User',
-    points: 1000,
+    points: 0,
     isAdmin: true,
-    joinedAt: '2024-01-01',
-  },
-  {
-    id: '2',
-    email: 'david@gmail.com',
-    name: 'david malviya',
-    points: 1000,
-    isAdmin: false,
     joinedAt: '2024-01-01',
   },
 ];
@@ -56,7 +48,7 @@ export function AuthProvider({ children }) {
       id: Date.now().toString(),
       email,
       name,
-      points: 1000,
+      points: 100,
       isAdmin: false,
       joinedAt: new Date().toISOString().split('T')[0],
     };
@@ -75,7 +67,6 @@ export function AuthProvider({ children }) {
     login,
     signup,
     logout,
-    setUser
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

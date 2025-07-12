@@ -5,8 +5,9 @@ import { mockItems } from '../data/mockItems';
 import { ChevronLeft, Heart, Share2, MapPin, Star, User, MessageCircle } from 'lucide-react';
 
 export function ItemDetail() {
+  // const { user, setUser } = useAuth();
   const { id } = useParams();
-  const { user } = useAuth();
+  const { user,setUser } = useAuth();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showSwapModal, setShowSwapModal] = useState(false);
   const [swapType, setSwapType] = useState('swap'); // Removed TS type
@@ -233,6 +234,19 @@ export function ItemDetail() {
               <button
                 onClick={() => {
                   setShowSwapModal(false);
+                  let user = JSON.parse(localStorage.getItem("rewear_user"));
+                  if (user) {
+                  const updatedUser = {
+                    ...user,
+                    points: user.points - item.pointValue,
+                  };
+                
+                  // 1. Update Context
+                  setUser(updatedUser);
+               
+                  localStorage.setItem("rewear_user", JSON.stringify(updatedUser));
+                  }
+                  console.log(user.points)
                   alert(swapType === 'swap' ? 'Swap request sent!' : 'Item redeemed successfully!');
                 }}
                 className="flex-1 bg-emerald-600 text-white py-2 px-4 rounded-lg hover:bg-emerald-700"

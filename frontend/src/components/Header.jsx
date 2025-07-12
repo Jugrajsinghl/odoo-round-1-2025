@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Search, User, ArrowLeft } from 'lucide-react';
 
 
